@@ -3,17 +3,21 @@ from random import shuffle
 from tkinter.messagebox import showinfo, showerror
 
 colors = {
-    1: 'blue',
-    2: 'green',
-    3: 'red',
-    4: 'yellow'
+    1: '#0000ff',
+    2: '#008200',
+    3: '#ff0000',
+    4: '#000084',
+    5: '#840000',
+    6: '#008284',
+    7: '#840084',
+    8: '#757575'
 }
 
 
 class MyButton(tk.Button):
 
     def __init__(self, master, x, y, number=0, *args, **kwargs):
-        super(MyButton, self).__init__(master, width=3, font='Helvetica 18 bold', *args, **kwargs)
+        super(MyButton, self).__init__(master, width=3, font='Verdana 24 bold', *args, **kwargs)
         self.x = x
         self.y = y
         self.number = number
@@ -131,9 +135,10 @@ class MineSweeper:
         mines_entry = tk.Entry(win_setting)
         mines_entry.insert(0, MineSweeper.MINES)
         mines_entry.grid(row=2, column=1, padx=20, pady=20)
-        save_btn = tk.Button(win_setting, text='Save', \
-                  command=lambda: self.change_settings(row_entry, column_entry, mines_entry))
+        save_btn = tk.Button(win_setting, text='Save',
+                             command=lambda: self.change_settings(row_entry, column_entry, mines_entry))
         save_btn.grid(row=3, column=0, columnspan=2, padx=20, pady=20)
+
     def change_settings(self, row: tk.Entry, column: tk.Entry, mines: tk.Entry):
         try:
             int(row.get()), int(column.get()), int(mines.get())
