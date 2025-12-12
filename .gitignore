@@ -1,0 +1,14 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# venv
+.venv/
+venv/
+
+# PyCharm
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
